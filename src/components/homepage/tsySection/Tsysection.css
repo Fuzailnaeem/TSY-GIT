@@ -1,0 +1,213 @@
+/* TsySection.css */
+
+.tsy {
+  background-color: #f7f9fa;
+  padding: 40px 20px;
+  font-family: inherit;
+}
+
+.tsy-section {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tsy-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #EEF2C0;
+  padding: 40px;
+  border-radius: 16px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.tsy-hero-content {
+  flex: 1;
+  padding-right: 30px;
+}
+
+.tsy-hero-tag {
+  font-size: 14px;
+  font-weight: 600;
+  color: #d97706;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tsy-hero-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+  margin: 10px 0 16px;
+}
+
+.tsy-hero-text {
+  font-size: 16px;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.tsy-link {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.tsy-btn-outline {
+  padding: 10px 20px;
+  border: 1px solid #111827;
+  border-radius: 8px;
+  background: transparent;
+  font-weight: 600;
+  color: #111827;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tsy-btn-outline:hover {
+  background: #111827;
+  color: #ffffff;
+}
+
+.tsy-phone-wrap {
+  width: 400px;
+  height: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.tsy-phone-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Horizontal List Layout matching image_2db6b1.png */
+.tsy-know-heading {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.tsy-know-underline {
+  width: 32px;
+  height: 3px;
+  background-color: #d97706;
+  margin-bottom: 24px;
+  border-radius: 2px;
+}
+
+.tsy-horizontal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tsy-horizontal-card {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  padding: 20px 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 1px solid #e5e7eb;
+}
+
+.tsy-horizontal-card-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 24px;
+  min-width: 90px;
+}
+
+.tsy-horizontal-img-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 6px;
+}
+
+.tsy-horizontal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tsy-horizontal-tag {
+  font-size: 12px;
+  color: #4b5563;
+  text-align: center;
+  font-weight: 500;
+}
+
+.tsy-horizontal-content {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.tsy-horizontal-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 4px 0;
+}
+
+.tsy-horizontal-desc {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.tsy-btn-pill {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.tsy-btn-pill:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+@media (max-width: 768px) {
+  .tsy-hero {
+    flex-direction: column;
+  }
+  .tsy-hero-content {
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+  .tsy-phone-wrap {
+    width: 100%;
+  }
+  .tsy-horizontal-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .tsy-horizontal-card-left {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    margin-right: 0;
+  }
+  .tsy-btn-pill {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,147 @@
+.guidance-banner{
+    background-color: #fff;
+}
+.guidance-banner-wrapper {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.guidance-banner-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 16px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.guidance-banner-inner {
+  background-color: #f0f9ff;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.guidance-avatar-container {
+  flex-shrink: 0;
+}
+
+.guidance-avatar-bg {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background-color: #f97316;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.guidance-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transform: scale(1.1);
+}
+
+.guidance-text-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.guidance-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  letter-spacing: -0.025em;
+}
+
+.guidance-description {
+  font-size: 0.875rem;
+  color: #4b5563;
+  margin: 4px 0 0 0;
+}
+
+.guidance-action {
+  flex-shrink: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.guidance-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border: 1px solid #111827;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #111827;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+}
+
+.guidance-btn:hover {
+  background-color: #111827;
+  color: #ffffff;
+}
+
+.guidance-btn-arrow {
+  margin-left: 8px;
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.guidance-btn:hover .guidance-btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Responsive styles for tablets and desktop */
+@media (min-width: 768px) {
+  .guidance-banner-card {
+    flex-direction: row;
+  }
+  
+  .guidance-banner-inner {
+    flex-direction: row;
+  }
+
+  .guidance-text-content {
+    text-align: left;
+  }
+
+  .guidance-title {
+    font-size: 1.5rem;
+  }
+
+  .guidance-description {
+    font-size: 1rem;
+  }
+
+  .guidance-action {
+    width: auto;
+  }
+
+  .guidance-btn {
+    width: auto;
+  }
+}

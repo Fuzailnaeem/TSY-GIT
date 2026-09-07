@@ -1,0 +1,428 @@
+/* ===== Reset-ish base ===== */
+.TSY-navbar * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.TSY-navbar {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  width: 100%;
+}
+
+.TSY-navbar a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== Top utility bar ===== */
+.TSY-topbar {
+  background-color: #2b2b2b;
+  color: #ffffff;
+}
+
+.TSY-topbar-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 28px;
+  padding: 10px 32px;
+  font-size: 14px;
+}
+
+.TSY-topbar-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #ffffff;
+  opacity: 0.95;
+  white-space: nowrap;
+}
+
+.TSY-topbar-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.TSY-join-link {
+  gap: 8px;
+}
+
+.TSY-badge {
+  background-color: #e8632c;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.TSY-dropdown-link,
+.TSY-lang-link {
+  cursor: pointer;
+}
+
+/* ===== Main bar ===== */
+.TSY-mainbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.TSY-mainbar-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px 32px;
+}
+
+/* Logo */
+.TSY-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #1a1a1a;
+  flex-shrink: 0;
+}
+
+.TSY-logo-img {
+  height: 60px;      
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.TSY-logo-mark {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  display: inline-block;
+}
+
+.TSY-logo-mark .dot {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+}
+
+.dot-orange {
+  background-color: #e8632c;
+  top: 0;
+  left: 6px;
+}
+
+.dot-teal {
+  background-color: #2ea38c;
+  bottom: 0;
+  left: 0;
+}
+
+.dot-blue {
+  background-color: #2f6fed;
+  bottom: 0;
+  right: 0;
+}
+
+/* Center nav links */
+.TSY-main-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex: 1;
+  justify-content: center;
+  font-size: 16px;
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+.TSY-main-links a:hover {
+  color: #2ea38c;
+}
+
+/* Right side actions */
+.TSY-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.TSY-cta {
+  background-color: var(--color-secondary);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: background-color 0.15s ease;
+}
+
+.TSY-cta:hover {
+  background-color: #F5A623;
+}
+
+.TSY-signin {
+  border: 1px solid #cfcfcf;
+  color: #1a1a1a;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 11px 20px;
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: border-color 0.15s ease;
+}
+.TSY-nav-item-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.TSY-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.TSY-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 12px 0;
+  min-width: 240px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.TSY-dropdown-menu a {
+  padding: 10px 20px;
+  color: #333333;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.TSY-dropdown-menu a:hover {
+  background-color: #f4f6f8;
+  color: #007bff;
+}
+.TSY-signin:hover {
+  border-color: #1a1a1a;
+}
+
+.TSY-icon-btn {
+  background: none;
+  border: none;
+  color: #e8632c;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .TSY-main-links {
+    gap: 18px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 900px) {
+  .TSY-topbar-inner {
+    display: none; /* collapse utility bar on small screens */
+  }
+
+  .TSY-main-links {
+    display: none; /* would typically become a hamburger menu */
+  }
+
+  .TSY-mainbar-inner {
+    padding: 12px 16px;
+  }
+}
+/* Mobile Menu Button - Hide on desktop */
+.TSY-mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  padding: 8px;
+  margin-left: 8px;
+}
+
+/* Drawer Overlay */
+.TSY-drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  animation: TSY-fadeIn 0.3s ease;
+}
+
+/* Drawer */
+.TSY-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 320px;
+  max-width: 85%;
+  height: 100%;
+  background: white;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+  animation: TSY-slideIn 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+/* Drawer Header */
+.TSY-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #eee;
+  flex-shrink: 0;
+}
+
+.TSY-drawer-logo {
+  display: flex;
+  align-items: center;
+}
+
+.TSY-drawer-logo img {
+  height: 40px;
+  width: auto;
+}
+
+.TSY-drawer-close {
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Drawer Navigation */
+.TSY-drawer-nav {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.TSY-drawer-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.TSY-drawer-link:hover {
+  background-color: #f5f5f5;
+}
+
+.TSY-drawer-top-link {
+  font-weight: 400;
+  font-size: 14px;
+  color: #666;
+}
+
+.TSY-drawer-divider {
+  border-top: 1px solid #eee;
+  margin: 8px 0;
+}
+
+.TSY-drawer-cta {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #1a73e8;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 8px;
+  transition: background-color 0.2s;
+}
+
+.TSY-drawer-cta:hover {
+  background: #1557b0;
+}
+
+/* Animations */
+@keyframes TSY-fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes TSY-slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Breakpoint */
+@media (max-width: 992px) {
+  .TSY-main-links {
+    display: none;
+  }
+
+  .TSY-mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Hide CTA on mobile (optional - can be kept in drawer) */
+  .TSY-actions .TSY-cta {
+    display: none;
+  }
+}
+
+@media (min-width: 993px) {
+  .TSY-drawer-overlay {
+    display: none !important;
+  }
+}
+
+/* Optional: Hide topbar on mobile */
+@media (max-width: 768px) {
+  .TSY-topbar {
+    display: none;
+  }
+}

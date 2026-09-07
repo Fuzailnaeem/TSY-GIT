@@ -1,0 +1,98 @@
+body{
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  padding: 0;
+}
+/* =========================================================
+   TSY — "Never Stop Travelling!" — Website Color Theme
+   Colors derived from the logo (blue swirl/cloud, golden sun,
+   coral/red, green & pink accents from the flowers/leaves)
+   ========================================================= */
+
+:root {
+  /* ---------- Primary (Blue — cloud, swirl, TSY text) ---------- */
+  --color-primary: #1c6ea4;        /* main brand blue */
+  --color-primary-dark: #0f4c75;   /* deep navy blue — headers, footer */
+  --color-primary-light: #4a9fd8;  /* lighter blue — hover states */
+  --color-primary-pale: #e8f4fb;   /* very light blue — section backgrounds */
+
+  /* ---------- Secondary (Golden Yellow / Orange — swirl & sun rays) ---------- */
+  --color-secondary: #f5a623;      /* golden yellow — main accent/CTA */
+  --color-secondary-dark: #d98c0f; /* darker gold — hover on buttons */
+  --color-secondary-light: #ffd166;/* light gold — highlights, badges */
+
+  /* ---------- Accent colors (from leaves & flowers) ---------- */
+  --color-accent-red: #d94f3d;     /* coral red — leaves, alerts, badges */
+  --color-accent-maroon: #8c2f39;  /* deep maroon — Statue of Liberty accent */
+  --color-accent-green: #4a8c3a;   /* green — leaves */
+  --color-accent-pink: #e0559b;    /* pink/magenta — flowers */
+
+  /* ---------- Neutrals ---------- */
+  --color-text-dark: #1a1a1a;      /* main body text */
+  --color-text-muted: #5c6773;     /* secondary text */
+  --color-text-light: #ffffff;     /* text on dark backgrounds */
+  --color-bg: #ffffff;             /* page background */
+  --color-bg-soft: #f7f9fb;        /* soft section background */
+  --color-border: #e1e6ea;         /* borders, dividers */
+
+  /* ---------- Status colors (optional, useful for forms/booking) ---------- */
+  --color-success: #4a8c3a;
+  --color-warning: #f5a623;
+  --color-error: #d94f3d;
+
+  /* ---------- Typography ---------- */
+  --font-heading: "Poppins", "Segoe UI", sans-serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+
+  /* ---------- Spacing & Radius ---------- */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-pill: 999px;
+  --shadow-sm: 0 2px 6px rgba(15, 76, 117, 0.08);
+  --shadow-md: 0 6px 20px rgba(15, 76, 117, 0.12);
+}
+
+/* ---------- Base reset using theme ---------- */
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-dark);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-primary-dark);
+}
+
+a {
+  color: var(--color-primary);
+}
+
+/* ---------- Example: primary CTA button using theme ---------- */
+.btn-primary {
+  background-color: var(--color-secondary);
+  color: var(--color-text-dark);
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 12px 24px;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-secondary-dark);
+}
+
+.btn-secondary {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 12px 24px;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary-dark);
+}

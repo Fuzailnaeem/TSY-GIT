@@ -1,0 +1,91 @@
+.abroad-help{
+    background-color: #fff;
+}
+.abroad-help-container {
+  max-width: 900px;
+  margin: 40px auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #222;
+  padding: 0 20px;
+  background-color: #fff;
+}
+
+.main-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 35px;
+  position: relative;
+  display: inline-block;
+}
+
+.title-underline {
+  display: block;
+  width: 24px;
+  height: 4px;
+  background-color: #f26a1b; /* Orange brand line */
+  margin-top: 8px;
+}
+
+.accordion-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #dcdcdc;
+  padding: 24px 0;
+}
+
+.accordion-header {
+  width: 100%;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+}
+
+.accordion-header h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+
+.icon {
+  font-size: 20px;
+  font-weight: 400;
+  color: #333;
+}
+
+.accordion-content {
+  margin-top: 12px;
+}
+
+.accordion-content p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #444;
+  margin: 0 0 12px 0;
+}
+
+.link-group {
+  font-size: 14px;
+}
+
+.content-link {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+.content-link:hover {
+  text-decoration: underline;
+}
+
+.separator {
+  color: #888;
+  margin: 0 8px;
+}

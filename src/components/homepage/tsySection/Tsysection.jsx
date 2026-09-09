@@ -1,7 +1,6 @@
 import React from "react";
 import { ChevronRight } from "lucide-react";
-import "./TsySection.css";
-
+import "./Tsysection.css";
 export default function TsySection() {
   const cards = [
     {

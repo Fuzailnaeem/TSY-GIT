@@ -1,19 +1,5 @@
 import React, { useState, useRef, useCallback, useEffect } from "react";
 
-/* ---------------------------------------------------------
-   Visa Application — Individual + Corporate, 4 steps each
-   Visual language: grey tab strip, white rounded panel,
-   pill inputs, blue pill CTA
-   Step 4 is "Flight Preferences"
-
-   FIXED: alert() calls removed. Sandboxed preview
-   environments (and some embedded/iframe contexts) block
-   alert()/confirm()/prompt() — calling them throws, and
-   since that throw happened inside a catch block, it went
-   uncaught and crashed the whole app. Errors are now shown
-   as an inline banner instead.
---------------------------------------------------------- */
-
 const API_URL = "http://localhost:5000/send-application";
 
 const INDIVIDUAL_STEPS = [

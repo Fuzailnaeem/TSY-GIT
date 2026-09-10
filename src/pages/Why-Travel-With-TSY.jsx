@@ -7,12 +7,6 @@ import { useNavigate } from 'react-router-dom'; // Add this import at the top
 
   import HeroImage from '../assets/Gemini_Generated_Image_rdmyy6rdmyy6rdmy.jpg';
 
-  // --- Static data (kept outside the component so it isn't recreated on every render) ---
-  const HERO_TABS = [
-    { label: "Why Travel With TSY?", path: "/why-travel-with-tsy", active: true },
-    { label: "Our Gallery", path: "/Gallery" },
-      { label: "Our Services", path: "/services", active: false },
-  ];
   const SUB_NAV_ITEMS = [
     { label: 'Discover why travellers choose TSY', active: true },
     { label: 'Related guides' },
@@ -714,44 +708,7 @@ import { useNavigate } from 'react-router-dom'; // Add this import at the top
       textAlign: 'left',
     },
   };
-function HeroTabs() {
-  const navigate = useNavigate();
-  const currentPath = window.location.pathname; // Or use useLocation() from react-router
 
-  const handleTabClick = (path) => {
-    navigate(path); // This will navigate to the path
-  };
-
-  return (
-    <div style={styles.heroTabsBar}>
-      <div style={styles.heroTabsInner}>
-        {HERO_TABS.map((tab) => {
-          const isActive = tab.path === currentPath;
-          
-          return isActive ? (
-            <div 
-              key={tab.label} 
-              style={styles.tabActive}
-              onClick={() => handleTabClick(tab.path)}
-            >
-              {tab.label}
-              <div style={styles.tabActiveArrow} />
-            </div>
-          ) : (
-            <button 
-              key={tab.label} 
-              type="button" 
-              style={styles.tabInactive}
-              onClick={() => handleTabClick(tab.path)}
-            >
-              {tab.label}
-            </button>
-          );
-        })}
-      </div>
-    </div>
-  );
-}
   function SubNav() {
     const scrollToSection = (sectionId) => {
       const element = document.getElementById(sectionId);
@@ -1063,7 +1020,7 @@ function SignupCard() {
 
         {/* --- Top Hero Section --- */}
         <div style={{ width: '100%' }}>
-          <HeroTabs />
+
 
           <div style={styles.heroContent}>
             <div style={styles.heroText}>

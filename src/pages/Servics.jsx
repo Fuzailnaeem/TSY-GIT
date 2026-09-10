@@ -8,12 +8,6 @@ import Corporate from '../assets/corporate.jpg';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Link } from "react-router-dom";
 
-// --- Static Data ---
-const HERO_TABS = [
-  { label: "Why Travel With TSY?", path: "/why-travel-with-tsy", active: false },
-  { label: "Our Gallery", path: "/Gallery", active: false },
-  { label: "Our Services", path: "/services",  active: true },
-];
 
 const INTRO_TEXT =
   "Tsy Travel and tour services takes the hassle out of planning by handling your flights, handpicked hotels, and custom holiday packages from start to finish. Whether it's a relaxing family getaway, a romantic escape, or a corporate trip, our dedicated team manages every detail so you can simply pack your bags and enjoy a smooth, unforgettable journey.";
@@ -775,50 +769,6 @@ const styles = {
   },
 };
 
-function HeroTabs() {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const currentPath = location.pathname;
-
-  const handleTabClick = (path) => {
-    navigate(path);
-  };
-
-  return (
-    <div style={styles.heroTabsBar}>
-      <div style={styles.heroTabsInner}>
-        {HERO_TABS.map((tab) => {
-          const isActive = tab.path === currentPath;
-
-          return isActive ? (
-            <div
-              key={tab.label}
-              style={styles.tabActive}
-              onClick={() => handleTabClick(tab.path)}
-              role="button"
-              tabIndex={0}
-              onKeyPress={(e) => {
-                if (e.key === 'Enter') handleTabClick(tab.path);
-              }}
-            >
-              {tab.label}
-            </div>
-          ) : (
-            <button
-              key={tab.label}
-              type="button"
-              style={styles.tabInactive}
-              onClick={() => handleTabClick(tab.path)}
-            >
-              {tab.label}
-            </button>
-          );
-        })}
-      </div>
-    </div>
-  );
-}
-
 function SubNav({ scrollToFeatureSection, scrollToUmrahSection, scrollToCorporateSection, scrollToVisaSection }) {
   return (
     <div style={styles.subNav}>
@@ -1161,8 +1111,7 @@ export default function WhyTravelWithTSY() {
   return (
     <div style={styles.page}>
       <Navbar />
-      <HeroTabs />
-
+=
       <HeroSection />
 
       <SubNav

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"; // Import Link
 import "./hero.css";
 import bannerImage from "../../../assets/ME_homepage_banner.webp";
 import StudyForm from "../studyform/Studysearchform.jsx";
-import TrustSection from '../trustsection/trustSection.jsx';
+import TrustSection from '../../homepage/trustsection/TrustSection.jsx';
 
 const slides = [
   {
@@ -87,11 +87,15 @@ export default function Hero() {
             </Link>
           </div>
         </div>
+<div className="study-form-container">
 
         <StudyForm />
+</div>
       </section>
-
+<div className="trustSection-container">
       <TrustSection />
+
+</div>
     </>
   );
 }

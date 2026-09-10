@@ -1073,44 +1073,8 @@ export default function Gallery() {
         <main className="gallery-main">
           {/* ===== DESKTOP NAV ===== */}
           <div className="study-nav-wrapper">
-            <div className="study-nav-container">
-              {studyNavItems.map((item, index) => {
-                const isActive = index === activeIndex;
-                return (
-                  <div
-                    key={index}
-                    onClick={() => handleTabClick(index, item.path)}
-                    className={isActive ? 'nav-item-active' : 'nav-item-inactive'}
-                  >
-                    <span>{item.label}</span>
-                    {!isActive && index < studyNavItems.length && (
-                      <span className="nav-arrow">»</span>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
           </div>
 
-          {/* ===== MOBILE DROPDOWN NAV ===== */}
-          <div className="mobile-nav-dropdown">
-            <select
-              className="mobile-nav-select"
-              value={activeIndex}
-              onChange={(e) => {
-                const idx = parseInt(e.target.value);
-                handleTabClick(idx, studyNavItems[idx].path);
-              }}
-            >
-              {studyNavItems.map((item, index) => (
-                <option key={index} value={index}>
-                  {item.label}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          {/* ===== ACTIVE INDICATOR ===== */}
           <div className="active-indicator-wrapper">
             <div className="active-arrow-box">▲</div>
           </div>

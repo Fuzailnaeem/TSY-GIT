@@ -705,6 +705,12 @@ export default function VisaApplicationForm() {
 
 const CSS = `
 @media screen and (max-width: 480px) {
+    .vf-page {
+        margin-top: 278px !important;
+        padding: 6px;
+    }
+}
+@media screen and (max-width: 480px) {
   .vf-page {
     padding: 6px;
     margin-top: 180px !important;

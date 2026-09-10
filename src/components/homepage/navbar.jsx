@@ -162,25 +162,7 @@ export default function Navbar() {
                 Join TSY Community <span className="TSY-badge">New</span>
               </Link>
 
-              <Link to="/news" className="TSY-drawer-link TSY-drawer-top-link" onClick={closeDrawer}>
-                News and articles
-              </Link>
-
-              <Link to="/events" className="TSY-drawer-link TSY-drawer-top-link" onClick={closeDrawer}>
-                Events
-              </Link>
-
-              <a href="#" className="TSY-drawer-link TSY-drawer-top-link">
-                Find us <ChevronDown size={14} />
-              </a>
-
-              <a href="#" className="TSY-drawer-link TSY-drawer-top-link">
-                Social <ChevronDown size={14} />
-              </a>
-
-              <a href="#" className="TSY-drawer-link TSY-drawer-top-link">
-                <Globe size={14} /> English
-              </a>
+             
 
               <div className="TSY-drawer-divider"></div>
 

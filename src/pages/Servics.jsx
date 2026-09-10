@@ -82,6 +82,99 @@ const VISA_SERVICES = [
   }
 ];
 
+// --- Responsive overrides ---------------------------------------------
+// Inline `style` objects win over plain CSS specificity, so these rules
+// use !important to reliably override them at the breakpoints below.
+// Breakpoints: <=1024px (tablet/small laptop), <=768px (large phone/
+// small tablet), <=480px (phone).
+const RESPONSIVE_CSS = `
+  .tsy-page { overflow-x: hidden; }
+
+  @media (max-width: 1024px) {
+    .tsy-hero-section {
+      grid-template-columns: 1fr !important;
+      max-height: none !important;
+      min-height: 0 !important;
+    }
+    .tsy-hero-image-wrapper {
+      min-height: 220px !important;
+      max-height: 260px !important;
+      order: -1;
+      border-radius: 20px 20px 0 0 !important;
+    }
+    .tsy-hero-content { padding: 24px !important; }
+    .tsy-feature-section,
+    .tsy-umrah-section,
+    .tsy-corporate-section {
+      grid-template-columns: 1fr !important;
+    }
+    .tsy-blue-card, .tsy-umrah-card, .tsy-corporate-card {
+      height: 260px !important;
+      order: -1;
+    }
+    .tsy-umrah-section-reversed .tsy-umrah-card { order: -1; }
+  }
+
+  @media (max-width: 768px) {
+    .tsy-hero-title { font-size: 22px !important; }
+    .tsy-hero-description { font-size: 13px !important; }
+    .tsy-hero-stats { gap: 18px !important; }
+    .tsy-hero-stat-number { font-size: 18px !important; }
+
+    .tsy-sub-nav { gap: 20px !important; justify-content: flex-start !important; }
+    .tsy-tabs-inner { justify-content: flex-start !important; }
+
+    .tsy-main-heading,
+    .tsy-umrah-heading,
+    .tsy-corporate-heading,
+    .tsy-visa-main-heading { font-size: 22px !important; }
+
+    .tsy-feature-section,
+    .tsy-umrah-section,
+    .tsy-umrah-section-reversed,
+    .tsy-corporate-section,
+    .tsy-visa-section {
+      padding: 24px 16px !important;
+    }
+
+    .tsy-intro-banner { padding: 16px 18px !important; }
+    .tsy-intro-text { font-size: 14px !important; }
+
+    .tsy-content-row { flex-direction: column !important; padding: 16px !important; }
+    .tsy-video-card { min-height: 220px !important; }
+    .tsy-signup-card { padding: 20px !important; }
+
+    .tsy-visa-header p { font-size: 13px !important; }
+  }
+
+  @media (max-width: 480px) {
+    .tsy-hero-content { padding: 18px !important; }
+    .tsy-hero-title { font-size: 19px !important; }
+    .tsy-hero-image-wrapper { min-height: 180px !important; max-height: 200px !important; }
+
+    .tsy-main-heading,
+    .tsy-umrah-heading,
+    .tsy-corporate-heading,
+    .tsy-visa-main-heading { font-size: 19px !important; }
+
+    .tsy-description,
+    .tsy-umrah-description,
+    .tsy-corporate-description { font-size: 13px !important; }
+
+    .tsy-blue-card, .tsy-umrah-card, .tsy-corporate-card { height: 200px !important; }
+
+    .tsy-cta-button,
+    .tsy-cta-button-green,
+    .tsy-cta-button-purple {
+      width: 100% !important;
+      text-align: center !important;
+    }
+
+    .tsy-video-overlay { padding: 16px 12px !important; }
+    .tsy-hero-tabs-bar { padding: 0 12px !important; }
+  }
+`;
+
 // --- Complete Inline CSS Styles ---
 const styles = {
   page: {
@@ -771,7 +864,7 @@ const styles = {
 
 function SubNav({ scrollToFeatureSection, scrollToUmrahSection, scrollToCorporateSection, scrollToVisaSection }) {
   return (
-    <div style={styles.subNav}>
+    <div className="tsy-sub-nav" style={styles.subNav}>
       <button type="button" style={styles.subNavActive} onClick={scrollToFeatureSection}>
         Holidays planned
         <span style={styles.subNavActiveUnderline} />
@@ -791,29 +884,29 @@ function SubNav({ scrollToFeatureSection, scrollToUmrahSection, scrollToCorporat
 
 function HeroSection() {
   return (
-    <div style={styles.heroSection}>
-      <div style={styles.heroContent}>
+    <div className="tsy-hero-section" style={styles.heroSection}>
+      <div className="tsy-hero-content" style={styles.heroContent}>
         <div style={styles.heroTagline}>TSY Pakistan / Services</div>
-        <h1 style={styles.heroTitle}>Three kinds of travel, one team behind each</h1>
-        <p style={styles.heroDescription}>
+        <h1 className="tsy-hero-title" style={styles.heroTitle}>Three kinds of travel, one team behind each</h1>
+        <p className="tsy-hero-description" style={styles.heroDescription}>
           TSY doesn't try to cover every kind of trip — it's built real depth in the ones that matter most to its clients: leisure travel, Umrah, and corporate & MICE.
         </p>
-        <div style={styles.heroStats}>
+        <div className="tsy-hero-stats" style={styles.heroStats}>
           <div style={styles.heroStat}>
-            <span style={styles.heroStatNumber}>40+</span>
+            <span className="tsy-hero-stat-number" style={styles.heroStatNumber}>40+</span>
             <span style={styles.heroStatLabel}>Years of Experience</span>
           </div>
           <div style={styles.heroStat}>
-            <span style={styles.heroStatNumber}>10K+</span>
+            <span className="tsy-hero-stat-number" style={styles.heroStatNumber}>10K+</span>
             <span style={styles.heroStatLabel}>Happy Travellers</span>
           </div>
           <div style={styles.heroStat}>
-            <span style={styles.heroStatNumber}>3</span>
+            <span className="tsy-hero-stat-number" style={styles.heroStatNumber}>3</span>
             <span style={styles.heroStatLabel}>Specialised Services</span>
           </div>
         </div>
       </div>
-      <div style={styles.heroImageWrapper}>
+      <div className="tsy-hero-image-wrapper" style={styles.heroImageWrapper}>
         <img
           src={HERO_STOCK_IMAGE}
           alt="TSY Travel - Three kinds of travel, one team behind each"
@@ -829,8 +922,8 @@ function HeroSection() {
 
 function IntroTextSection() {
   return (
-    <div style={styles.introBanner}>
-      <p style={styles.introText}>{INTRO_TEXT}</p>
+    <div className="tsy-intro-banner" style={styles.introBanner}>
+      <p className="tsy-intro-text" style={styles.introText}>{INTRO_TEXT}</p>
     </div>
   );
 }
@@ -838,17 +931,17 @@ function IntroTextSection() {
 // --- TravelFeatureSection: now receives navigate as a prop ---
 const TravelFeatureSection = React.forwardRef(({ navigate }, ref) => {
   return (
-    <section id="main-benefits-section" ref={ref} style={styles.featureSection}>
+    <section id="main-benefits-section" ref={ref} className="tsy-feature-section" style={styles.featureSection}>
       <div>
         <div style={styles.badge}>
           <span>✈</span> Leisure &amp; Family Travel
         </div>
 
-        <h2 style={styles.mainHeading}>
+        <h2 className="tsy-main-heading" style={styles.mainHeading}>
           Holidays planned around how you actually like to travel
         </h2>
 
-        <p style={styles.description}>
+        <p className="tsy-description" style={styles.description}>
           Whether it's a family holiday, a couple's getaway, or a trip with friends,
           TSY builds the itinerary around what you want to do — not a fixed package template.
         </p>
@@ -863,13 +956,13 @@ const TravelFeatureSection = React.forwardRef(({ navigate }, ref) => {
         </ul>
 
         <div>
-          <button style={styles.ctaButton} onClick={() => { navigate("/enquiry"); window.scrollTo(0, 0); }}>
+          <button className="tsy-cta-button" style={styles.ctaButton} onClick={() => { navigate("/enquiry"); window.scrollTo(0, 0); }}>
             Enquire about leisure travel
           </button>
         </div>
       </div>
 
-      <div style={styles.blueCard}>
+      <div className="tsy-blue-card" style={styles.blueCard}>
         <img
           src={HeroImage}
           alt="Travel Planning"
@@ -884,8 +977,8 @@ const TravelFeatureSection = React.forwardRef(({ navigate }, ref) => {
 // --- UmrahSection: now receives navigate as a prop ---
 const UmrahSection = React.forwardRef(({ navigate }, ref) => {
   return (
-    <section id="umrah-section" ref={ref} style={styles.umrahSectionReversed}>
-      <div style={styles.umrahCard}>
+    <section id="umrah-section" ref={ref} className="tsy-umrah-section-reversed" style={styles.umrahSectionReversed}>
+      <div className="tsy-umrah-card" style={styles.umrahCard}>
         <img
           src={Umrah}
           alt="Umrah Package"
@@ -902,11 +995,11 @@ const UmrahSection = React.forwardRef(({ navigate }, ref) => {
           <span>🕋</span> Umrah
         </div>
 
-        <h2 style={styles.umrahHeading}>
+        <h2 className="tsy-umrah-heading" style={styles.umrahHeading}>
           A guided pilgrimage, planned with genuine care
         </h2>
 
-        <p style={styles.umrahDescription}>
+        <p className="tsy-umrah-description" style={styles.umrahDescription}>
           Umrah travel comes with its own logistics — TSY's packages are built specifically
           around what pilgrims need, so the focus stays on the journey itself.
         </p>
@@ -921,7 +1014,7 @@ const UmrahSection = React.forwardRef(({ navigate }, ref) => {
         </ul>
 
         <div>
-          <button style={styles.ctaButtonGreen} onClick={() => { navigate("/enquiry"); window.scrollTo(0, 0); }}>
+          <button className="tsy-cta-button-green" style={styles.ctaButtonGreen} onClick={() => { navigate("/enquiry"); window.scrollTo(0, 0); }}>
             Enquire about Umrah travel
           </button>
         </div>
@@ -933,17 +1026,17 @@ const UmrahSection = React.forwardRef(({ navigate }, ref) => {
 // --- CorporateSection: now receives navigate as a prop ---
 const CorporateSection = React.forwardRef(({ navigate }, ref) => {
   return (
-    <section id="corporate-section" ref={ref} style={styles.corporateSection}>
+    <section id="corporate-section" ref={ref} className="tsy-corporate-section" style={styles.corporateSection}>
       <div>
         <div style={styles.corporateBadge}>
           <span>🏢</span> Corporate &amp; MICE
         </div>
 
-        <h2 style={styles.corporateHeading}>
+        <h2 className="tsy-corporate-heading" style={styles.corporateHeading}>
           Group travel managed as one booking, not a stack of tickets
         </h2>
 
-        <p style={styles.corporateDescription}>
+        <p className="tsy-corporate-description" style={styles.corporateDescription}>
           Conferences, incentive trips, and business delegations involve more moving parts —
           multiple travellers, shared itineraries, one invoice. TSY coordinates all of it as
           a single managed booking.
@@ -959,13 +1052,13 @@ const CorporateSection = React.forwardRef(({ navigate }, ref) => {
         </ul>
 
         <div>
-          <button style={styles.ctaButtonPurple} onClick={() => { navigate("/enquiry"); window.scrollTo(0, 0); }}>
+          <button className="tsy-cta-button-purple" style={styles.ctaButtonPurple} onClick={() => { navigate("/enquiry"); window.scrollTo(0, 0); }}>
             Enquire about corporate travel
           </button>
         </div>
       </div>
 
-      <div style={styles.corporateCard}>
+      <div className="tsy-corporate-card" style={styles.corporateCard}>
         <img
           src={Corporate}
           alt="Corporate & MICE Travel"
@@ -994,9 +1087,9 @@ const VisaServicesSection = React.forwardRef(({ navigate }, ref) => {
   };
 
   return (
-    <section id="visa-section" ref={ref} style={styles.visaSection}>
-      <div style={styles.visaHeader}>
-        <h2 style={styles.visaMainHeading}>Across Every Service</h2>
+    <section id="visa-section" ref={ref} className="tsy-visa-section" style={styles.visaSection}>
+      <div className="tsy-visa-header" style={styles.visaHeader}>
+        <h2 className="tsy-visa-main-heading" style={styles.visaMainHeading}>Across Every Service</h2>
         <p style={styles.visaSubHeading}>
           Visa support, matched to how much you want handled
         </p>
@@ -1034,7 +1127,7 @@ const VisaServicesSection = React.forwardRef(({ navigate }, ref) => {
 function VideoCard({ isPlaying, onPlay }) {
   if (isPlaying) {
     return (
-      <div style={styles.videoCard}>
+      <div className="tsy-video-card" style={styles.videoCard}>
         <iframe
           width="100%"
           height="100%"
@@ -1049,12 +1142,12 @@ function VideoCard({ isPlaying, onPlay }) {
   }
 
   return (
-    <div style={styles.videoCard}>
+    <div className="tsy-video-card" style={styles.videoCard}>
       <div style={styles.videoImageWrap}>
         <img src={VIDEO_THUMBNAIL_IMAGE} alt="TSY Travel" style={styles.videoImage} />
       </div>
 
-      <div style={styles.videoOverlay}>
+      <div className="tsy-video-overlay" style={styles.videoOverlay}>
         <div>
           <div style={{ fontWeight: 'bold' }}>&gt;TSY</div>
           <div style={{ fontSize: '12px', color: '#93c5fd' }}>Video #01</div>
@@ -1109,9 +1202,11 @@ export default function WhyTravelWithTSY() {
   }, []);
 
   return (
-    <div style={styles.page}>
+    <div className="tsy-page" style={styles.page}>
+      <style>{RESPONSIVE_CSS}</style>
+
       <Navbar />
-=
+
       <HeroSection />
 
       <SubNav

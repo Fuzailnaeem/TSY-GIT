@@ -170,10 +170,15 @@ export default function Gallery() {
           display: flex;
           flex-direction: column;
           background-color: #f8f9fa;
+          overflow-x: hidden;
+          width: 100%;
         }
 
         .gallery-main {
           flex-grow: 1;
+          width: 100%;
+          max-width: 100vw;
+          overflow-x: hidden;
         }
 
         /* ===== STUDY NAVBAR (DESKTOP) ===== */
@@ -292,6 +297,8 @@ export default function Gallery() {
           max-width: 980px;
           margin: 0 auto;
           padding: 1rem 1.25rem 2rem 1.25rem;
+          width: 100%;
+          box-sizing: border-box;
         }
 
         .breadcrumb-text {
@@ -372,11 +379,17 @@ export default function Gallery() {
         .hero-visual-wrapper {
           position: relative;
           display: flex;
-          justify-content: flex-end;
+          justify-content: center;
           align-items: center;
           min-height: 280px;
           width: 100%;
           padding: 20px 0;
+        }
+
+        @media (min-width: 768px) {
+          .hero-visual-wrapper {
+            justify-content: flex-end;
+          }
         }
 
         .hero-curved-image-card {
@@ -433,22 +446,23 @@ export default function Gallery() {
         /* ===== CERTIFICATE SECTION ===== */
         .certificate-section {
           width: 100%;
+          max-width: 100%;
           background-color: #ffffff;
-          margin: 1rem 50px 2.5rem auto;
+          margin: 1rem 0 2.5rem 0;
           padding: 0 1.25rem;
+          box-sizing: border-box;
         }
 
         .certificate-grid {
           max-width: 980px;
-          margin: 0 ;
-          margin-right: 30px !important;
-          margin-left: 150px !important;
+          margin: 0 auto;
           display: grid;
           grid-template-columns: 1fr;
           gap: 2rem;
           align-items: center;
           background: transparent;
           padding: 2rem 1.5rem;
+          box-sizing: border-box;
         }
 
         @media (min-width: 640px) {
@@ -456,7 +470,6 @@ export default function Gallery() {
             grid-template-columns: 1fr 1fr;
             padding: 2.5rem 2rem;
             gap: 2.5rem;
-            margin-left: 30px;
           }
         }
 /* ===== 320px SCREEN SIZE SPECIFIC STYLES ===== */
@@ -499,7 +512,7 @@ export default function Gallery() {
   /* Certificate Section */
   .certificate-section {
     padding: 0 0.75rem;
-    margin: 0.5rem 20px 1.5rem auto;
+    margin: 0.5rem 0 1.5rem 0;
   }
 
   .certificate-grid {
@@ -509,7 +522,7 @@ export default function Gallery() {
 
   .certificate-text h2 {
     font-size: 1.2rem;
-  }uto
+  }
 
   .certificate-text p {
     font-size: 0.8rem;
@@ -778,6 +791,7 @@ export default function Gallery() {
           background: #ffffff;
           border-radius: 12px;
           box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+          box-sizing: border-box;
         }
 
         .about-simple-grid {
@@ -847,6 +861,7 @@ export default function Gallery() {
           max-width: 1100px;
           margin: 2rem auto 4rem auto;
           padding: 0 1.25rem;
+          box-sizing: border-box;
         }
 
         .gallery-section-title {

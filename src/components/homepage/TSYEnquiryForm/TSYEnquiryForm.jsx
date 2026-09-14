@@ -11,6 +11,16 @@ const WhatsAppBanner = () => {
     });
   };
 
+  // WhatsApp number in international format (without +, spaces, or dashes)
+  const whatsappNumber = '923111555395';
+
+  // Optional pre-filled message
+  const whatsappMessage = encodeURIComponent(
+    'Hello, I want to enquire about a trip.'
+  );
+
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
   return (
     <div className='TSFORM'>
       <section className="whatsapp-banner">
@@ -26,7 +36,7 @@ const WhatsAppBanner = () => {
 
           <div className="banner-buttons">
             <a
-              href="https://wa.me/"
+              href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary"
@@ -40,7 +50,7 @@ const WhatsAppBanner = () => {
             <Link 
               to="/enquiry" 
               className="btn-secondary"
-              onClick={scrollToTop}  // <-- yeh add karein
+              onClick={scrollToTop}
             >
               Start an enquiry
             </Link>

@@ -32,14 +32,22 @@ export default function Navbar() {
     window.scrollTo(0, 0);
   };
 
+  // WhatsApp link for TSY Community
+  const whatsappLink = "https://api.whatsapp.com/send/?phone=923111555395&text&type=phone_number&app_absent=0";
+
   return (
     <header className="TSY-navbar">
       {/* Top utility bar */}
       <div className="TSY-topbar">
         <div className="TSY-topbar-inner">
-          <Link to="/" className="TSY-topbar-link TSY-join-link">
+          <a 
+            href={whatsappLink} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="TSY-topbar-link TSY-join-link"
+          >
             Join TSY Community <span className="TSY-badge">New</span>
-          </Link>
+          </a>
         </div>
       </div>
 
@@ -158,11 +166,15 @@ export default function Navbar() {
 
               <div className="TSY-drawer-divider"></div>
 
-              <Link to="/" className="TSY-drawer-link TSY-drawer-top-link" onClick={closeDrawer}>
+              <a 
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="TSY-drawer-link TSY-drawer-top-link" 
+                onClick={closeDrawer}
+              >
                 Join TSY Community <span className="TSY-badge">New</span>
-              </Link>
-
-             
+              </a>
 
               <div className="TSY-drawer-divider"></div>
 

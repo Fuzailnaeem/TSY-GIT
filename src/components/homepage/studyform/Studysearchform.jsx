@@ -721,7 +721,7 @@ const CSS = `
 }
 
 .vf-page {
-  margin-top: -110px !important;
+  margin-top: -82px !important;
   min-height: 100%;
   width: 100%;
   box-sizing: border-box;

@@ -32,7 +32,7 @@ const cards = [
   },
   {
     icon: Star,
-    title: '[Google rating]',
+    title: 'Google Rating',
     description: 'Rated by our travellers — add your current review score and count here.',
   },
   {

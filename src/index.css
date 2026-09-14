@@ -92,7 +92,9 @@ a {
   font-weight: 600;
   transition: background-color 0.2s ease;
 }
-
+._footerOffice_ytzam_48 {
+    margin-left: 652px;
+}
 .btn-secondary:hover {
   background-color: var(--color-primary-dark);
 }

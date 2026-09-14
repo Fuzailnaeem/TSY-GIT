@@ -7,7 +7,6 @@ import TrustSection from '../trustsection/trustSection.jsx';
 
 const slides = [
   {
-    badge: "★ Trusted since 1985",
     title: "Your journey starts here.",
     description:
       "Planning a holiday, business trip, or pilgrimage? Tell us what you need, and our travel experts will take care of the rest.",

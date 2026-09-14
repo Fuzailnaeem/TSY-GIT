@@ -1,6 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import "./Tsysection.css";
+
 export default function TsySection() {
   const cards = [
     {
@@ -39,14 +41,14 @@ export default function TsySection() {
             </h2>
             <p className="tsy-hero-text">
               From corporate events and fast-track Umrah packages to expert{" "}
-              <a href="/services" className="tsy-link">
+              <Link to="/services" className="tsy-link">
                 visa assistance
-              </a>
+              </Link>
               , we make your travel planning completely seamless.
             </p>
-            <a href="/why-travel-with-tsy">
+            <Link to="/why-travel-with-tsy">
               <button className="tsy-btn-outline">More details</button>
-            </a>
+            </Link>
           </div>
 
           <div className="tsy-phone-wrap">

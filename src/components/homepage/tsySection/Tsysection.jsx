@@ -22,9 +22,6 @@ export default function TsySection() {
       description: (
         <>
           Applying for a visa can be confusing — our team makes it clear, at every step.{" "}
-          <a href="/services" className="tsy-link">
-            visa assistance
-          </a>
         </>
       ),
     },

@@ -704,6 +704,8 @@ export default function VisaApplicationForm() {
 }
 
 const CSS = `
+
+
 @media screen and (max-width: 480px) {
     .vf-page {
         margin-top: 278px !important;

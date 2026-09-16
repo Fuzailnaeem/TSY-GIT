@@ -723,8 +723,10 @@ const CSS = `
 }
 
 .vf-page {
-  margin-top: -82px !important;
-  min-height: 100%;
+max-width: 95%;
+margin-top: -82px !important;
+margin-bottom: -82px !important;
+min-height: 100%;
   width: 100%;
   box-sizing: border-box;
   display: flex;

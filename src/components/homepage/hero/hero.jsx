@@ -16,7 +16,7 @@ const slides = [
   {
     title: "Your visa journey starts here",
     description:
-      "Planning to study, work, visit, or settle abroad? TSY helps make your visa process simple and stress-free.",
+      "Planning to Umrah, visit, or settle abroad? TSY helps make your visa process simple and stress-free.",
     buttonText: "Talk to an expert",
     buttonLink: "/enquiry", // Add link
   },

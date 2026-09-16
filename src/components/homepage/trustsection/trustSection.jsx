@@ -22,8 +22,8 @@ const cards = [
   },
   {
     icon: Briefcase,
-    title: '4 Specialities',
-    description: 'Leisure, honeymoon, corporate & MICE, and Umrah — all planned under one roof.',
+    title: '4 Travel Specialties',
+    description: 'Leisure, corporate travel, MICE, and Umrah. All planned with care under one roof.',
   },
   {
     icon: Navigation,

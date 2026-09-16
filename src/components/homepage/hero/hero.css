@@ -158,7 +158,8 @@
 }
 
 .trustSection-container {
-  margin-top: 100px;
+  margin-top: -80px;
+
 }
 
 /* ---------- Responsive ---------- */
@@ -222,7 +223,7 @@
   }
 
   .trustSection-container {
-    margin-top: 32px;
+    margin-top: -132px;
   }
 }
 
@@ -262,21 +263,31 @@
   .hero-bg {
     max-height: 320px;
   }
-
+ .hero-inner {
+    padding: 24px 16px 0;
+    max-width: 90%;
+  }
   .hero-title {
     font-size: 26px;
   }
-
+.hero-cta {
+    max-width: 80%;
+  }
   .hero-description {
     font-size: 14px;
   }
-
+.hero-text {
+  max-width: 100%;
+    margin-top: -40px;  /* still needed here to keep the text from overlapping the image */
+  }
   .study-form-container {
-    margin-top: 16px;
+    margin-top: 100px;
     padding: 0 12px 6px;
+    margin-bottom: -280px;
+    margin-left: -12px;
   }
 
   .trustSection-container {
-    margin-top: 24px;
+    margin-top: 274px !important;
   }
 }

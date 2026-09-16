@@ -145,6 +145,8 @@ const RESPONSIVE_CSS = `
     .tsy-signup-card { padding: 20px !important; }
 
     .tsy-visa-header p { font-size: 13px !important; }
+
+    .tsy-visa-big-button { max-width: 100% !important; }
   }
 
   @media (max-width: 480px) {
@@ -172,6 +174,8 @@ const RESPONSIVE_CSS = `
 
     .tsy-video-overlay { padding: 16px 12px !important; }
     .tsy-hero-tabs-bar { padding: 0 12px !important; }
+
+    .tsy-visa-big-button { width: 100% !important; max-width: 100% !important; }
   }
 `;
 
@@ -821,44 +825,23 @@ const styles = {
     flexShrink: 0,
     marginTop: '1px',
   },
-  visaCardButton: {
+  // Big single CTA button shown below the 3 visa cards.
+  visaBigButton: {
+    display: 'block',
     width: '100%',
-    border: '2px solid #1A64D2',
-    color: '#1A64D2',
-    backgroundColor: 'transparent',
-    fontWeight: '600',
-    padding: '8px 14px',
+    maxWidth: '320px',
+    margin: '28px auto 0 auto',
+    border: 'none',
+    color: '#ffffff',
+    backgroundColor: '#1A64D2',
+    fontWeight: '700',
+    padding: '14px 24px',
     borderRadius: '30px',
-    fontSize: '12px',
+    fontSize: '15px',
+    textAlign: 'center',
     cursor: 'pointer',
     transition: 'all 0.2s ease',
-    marginTop: 'auto',
-  },
-  visaCardButtonGreen: {
-    width: '100%',
-    border: '2px solid #059669',
-    color: '#059669',
-    backgroundColor: 'transparent',
-    fontWeight: '600',
-    padding: '8px 14px',
-    borderRadius: '30px',
-    fontSize: '12px',
-    cursor: 'pointer',
-    transition: 'all 0.2s ease',
-    marginTop: 'auto',
-  },
-  visaCardButtonPurple: {
-    width: '100%',
-    border: '2px solid #7c3aed',
-    color: '#7c3aed',
-    backgroundColor: 'transparent',
-    fontWeight: '600',
-    padding: '8px 14px',
-    borderRadius: '30px',
-    fontSize: '12px',
-    cursor: 'pointer',
-    transition: 'all 0.2s ease',
-    marginTop: 'auto',
+    boxShadow: '0 4px 14px rgba(26, 100, 210, 0.3)',
   },
 };
 
@@ -1073,14 +1056,10 @@ const CorporateSection = React.forwardRef(({ navigate }, ref) => {
   );
 });
 
-// --- VisaServicesSection: now receives navigate as a prop, onClick added ---
+// --- VisaServicesSection: now receives navigate as a prop ---
+// Individual per-card buttons removed; single big CTA button shown
+// below the grid, shared across all three visa support options.
 const VisaServicesSection = React.forwardRef(({ navigate }, ref) => {
-  const getButtonStyle = (index) => {
-    if (index === 0) return styles.visaCardButton;
-    if (index === 1) return styles.visaCardButtonGreen;
-    return styles.visaCardButtonPurple;
-  };
-
   const getCardStyle = (index) => {
     if (index === 0) return styles.visaCardMostChosen;
     return styles.visaCard;
@@ -1114,12 +1093,18 @@ const VisaServicesSection = React.forwardRef(({ navigate }, ref) => {
                 </li>
               ))}
             </ul>
-            <button style={getButtonStyle(index)} onClick={() => { navigate("/enquiry"); window.scrollTo(0, 0); }}>
-              Enquire about visa support
-            </button>
           </div>
         ))}
       </div>
+
+      <button
+        type="button"
+        className="tsy-visa-big-button"
+        style={styles.visaBigButton}
+        onClick={() => { navigate("/enquiry"); window.scrollTo(0, 0); }}
+      >
+        Enquire about visa support
+      </button>
     </section>
   );
 });

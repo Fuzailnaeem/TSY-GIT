@@ -1128,16 +1128,16 @@ const redesignedCSS = `
 `;
 
 // ===== TAB CONTENTS (Hero Section) =====
-
 const tabContents = [
   {
-    breadcrumb: { portal: 'IDP Pakistan', currentPage: 'Enquiry Form?' },
-    title: 'Enquiry Form',
-    subtitle: "Your study abroad journey starts here. Tell us your goals through the enquiry form below, and let our experts guide you every step of the way.",
+    breadcrumb: { portal: 'TSY Visa Consultants', currentPage: 'Enquiry Form' },
+    title: 'Visa Enquiry Form',
+    subtitle: "Planning to apply for a visa? Share your travel plans and requirements through the enquiry form below, and let our visa experts guide you through the process.",
     showButton: true,
     buttonText: 'Contact TSY',
   },
 ];
+
 
 // ===== MAIN EXPORT =====
 

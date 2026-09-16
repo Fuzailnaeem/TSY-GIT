@@ -3,7 +3,7 @@
 /* Base mobile styles (default) */
 .whatsapp-banner {
   position: relative;
-  background: linear-gradient(135deg, #EDFCFF 0%, #d5f5fa 100%);
+  background: #389BD8;
   padding: 2rem 1.5rem;
   display: flex;
   align-items: center;
@@ -19,7 +19,7 @@
 .banner-content {
   max-width: 100%;
   z-index: 2;
-  color: black;
+  color: #ffffff;
   text-align: center;
   padding: 0;
   width: 100%;
@@ -33,7 +33,7 @@
   font-weight: 400;
   line-height: 1.3;
   margin-bottom: 0.75rem;
-  color: #1a1a1a;
+  color: #ffffff;
   letter-spacing: -0.3px;
   word-wrap: break-word;
 }
@@ -57,7 +57,7 @@
 }
 
 .whatsapp-banner p {
-  color: #4a4a4a;
+  color: #f0f0f0;
   font-size: 0.85rem;
   line-height: 1.5;
   margin-bottom: 1.25rem;
@@ -113,12 +113,12 @@
 
 .btn-secondary {
   background-color: transparent;
-  color: #1a1a1a;
+  color: #ffffff;
   font-weight: 500;
   font-size: 0.85rem;
   padding: 0.6rem 1.2rem;
   border-radius: 50px;
-  border: 2px solid #1a1a1a;
+  border: 2px solid #ffffff;
   text-decoration: none;
   transition: all 0.3s ease;
   display: inline-flex;
@@ -132,14 +132,14 @@
 }
 
 .btn-secondary:hover {
-  background-color: #1a1a1a;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #1a1a1a;
   transform: translateY(-1px);
 }
 
 /* Remove TSFORM wrapper or convert to useful class */
 .TSFORM {
-  background-color: #D9F6FB;
+  background-color: #389BD8;
   padding: 0.5rem;
   width: 100%;
   box-sizing: border-box;

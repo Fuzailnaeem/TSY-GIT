@@ -997,33 +997,6 @@ function OtherReasonsAccordion({ data = OTHER_REASONS_DATA }) {
   );
 }
 
-function SignupCard() {
-  const navigate = useNavigate();
-
-  const handleConsultationClick = () => {
-    navigate("/enquiry");
-  };
-
-  return (
-    <div style={styles.signupCard} className="tsy-signup-card">
-      <div>
-        <h3 style={styles.signupTitle}>Free guidance, smarter bookings</h3>
-        <p style={styles.signupText}>
-          Talk to a TSY consultant about destinations, visa tiers, and package options — at no cost.
-        </p>
-      </div>
-
-      <button
-        type="button"
-        style={styles.signupButton}
-        onClick={handleConsultationClick}
-      >
-        Book a free consultation
-      </button>
-    </div>
-  );
-}
-
 // --- Reusable Benefits Section Component ---
 function BenefitsSection({ data }) {
   return (
@@ -1145,9 +1118,9 @@ export default function WhyTravelWithTSY() {
           <p style={styles.introText} className="tsy-intro-text">{INTRO_TEXT}</p>
         </div>
 
-        <div style={styles.contentRow} className="tsy-content-row">
+        {/* <div style={styles.contentRow} className="tsy-content-row">
           <SignupCard />
-        </div>
+        </div> */}
       </div>
 
       <GuidanceBanner />
@@ -1162,12 +1135,12 @@ export default function WhyTravelWithTSY() {
       {/* --- Other Reasons Section --- */}
       <OtherReasonsAccordion data={OTHER_REASONS_DATA} />
 
-      {/* --- Related Guides Section --- */}
+      {/* --- Related Guides Section ---
       <section style={styles.section} className="tsy-section">
         <div style={styles.container}>
           <RelatedGuidesSection data={RELATED_GUIDES_DATA} />
         </div>
-      </section>
+      </section> */}
 
       {/* --- FAQ Section --- */}
       <FAQAccordion data={FAQ_DATA} />

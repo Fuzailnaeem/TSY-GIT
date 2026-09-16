@@ -1,50 +1,35 @@
 /* ===== Hero Section ===== */
-@media screen and (max-width: 480px) {
-  .study-form-container{
-    margin-top: 380px !important;
-    padding: 6px !important;
-  }
 
-  .trustSection-container {
-    margin-top: 400px !important;
-  }
-}
 .hero {
   position: relative;
   width: 100%;
-  aspect-ratio: 21 / 7;      /* 32/9 se kam "wide" kiya, height ke liye zyada jagah */
-  min-height: 480px;         /* pehle 360px tha — badha diya */
-  max-height: 620px;         /* pehle 490px tha — badha diya */
+  min-height: 480px;   /* floor, not a rigid box anymore */
   overflow: visible;
   font-family: "Inter", "Segoe UI", sans-serif;
 }
-.study-form-container {
-    margin-top: -163px;
-}
+
 .hero-bg {
-    display: block;
-  position: cover;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100% 100%;
-  object-fit: contain;
-  object-position: center;
-  background-color: #fff;
-  z-index: 1;
-}.hero-inner {
-  max-width: 1400px;
-  margin: 0 auto;
+  display: block;
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  height: 100%;
+  width: 100%;
+  height: 100%;         /* now stretches to match hero-inner's real height */
+  object-fit: cover;
+  object-position: center;
+  background-color: #fff;
+  z-index: 1;
+}
 
+.hero-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;   /* FIX: no longer absolute — this is what lets
+                            .hero grow to fit its actual content height */
+  min-height: 480px;    /* keeps the visual proportions you had before */
   display: flex;
   align-items: center;
-
-  padding: 0 60px;
+  padding: 60px 60px;
   z-index: 2;
 }
 
@@ -52,14 +37,14 @@
 
 .hero-text {
   max-width: 540px;
-  margin-top: -100px;
+  /* margin-top: -100px removed — that hack was only needed to
+     compensate for the old absolute layout; with hero-inner in
+     normal flow + align-items:center, it's not needed and was
+     part of what made overflow unpredictable */
+     margin-top: -200px;
 }
 
-/* ---------- Badge (eyebrow above title) ----------
-   Forced back into normal flow with !important, in case a global
-   stylesheet (e.g. a UI kit's notification ".badge" style) is
-   applying position:absolute/fixed and pulling this out of the
-   hero section. */
+    /* ---------- Badge ---------- */
 
 .hero-badge {
   position: static !important;
@@ -85,7 +70,7 @@
 .hero-title {
   font-size: 56px;
   font-weight: 800;
-  color: #1a1a1a ;
+  color: #1a1a1a;
   line-height: 1.1;
   margin-bottom: 20px;
   animation: fadeSlideIn 0.6s ease;
@@ -110,24 +95,17 @@
   border-radius: 999px;
   cursor: pointer;
   transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
 }
 
 .hero-cta:hover {
   background-color: #0f4c75;
 }
 
-/* ---------- Animation ---------- */
-
 @keyframes fadeSlideIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* ---------- Dots ---------- */
@@ -155,40 +133,73 @@
   transform: scale(1.15);
 }
 
-/* Hide old image section (not used anymore since we use .hero-bg) */
-
 .hero-media,
 .hero-photo {
   display: none;
 }
 
+/* ===========================================================
+   STUDY FORM CONTAINER
+   Anchored to .hero's bottom edge. Now safe because .hero's
+   height is driven by hero-inner's real content height (not a
+   fixed aspect-ratio box), so "bottom: 0" always means "right
+   after the text/button," never "on top of them."
+=========================================================== */
+
+.study-form-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateY(50%);
+  z-index: 3;
+  width: 100%;
+  padding: 0 24px;
+}
+
+.trustSection-container {
+  margin-top: 100px;
+}
+
 /* ---------- Responsive ---------- */
 
 @media (max-width: 1200px) {
-  .hero {
-    max-height: 640px;
-  }
-
   .hero-title {
     font-size: 46px;
   }
+  .hero-text {
+    max-width: 70%;
+  }
 }
-
-@media (max-width: 960px) {
+@media (max-width: 850px) {
+  .hero-title {
+    font-size: 42px;
+  }
+  .hero-text {
+    max-width: 60%;
+  }
+}
+@media (max-width: 980px) {
   .hero {
+    min-height: unset;
+    padding-bottom: 24px;
+  }
+
+  .hero-bg {
+    position: relative;
     height: auto;
-    min-height: 540px;
-    max-height: none;
+    max-height: 420px;
+    object-fit: cover;
   }
 
   .hero-inner {
-    padding: 40px 24px;
-    align-items: center;
+    min-height: unset;
+    padding: 32px 24px 0;
   }
 
   .hero-text {
-    max-width: 100%;
-    margin-top: -20px;
+    max-width: 60%;
+    margin-top: -400px;  /* still needed here to keep the text from overlapping the image */
   }
 
   .hero-title {
@@ -199,11 +210,25 @@
     font-size: 17px;
     max-width: 100%;
   }
+
+  .study-form-container {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    transform: none;
+    margin-top: 24px;
+    padding: 0 24px;
+  }
+
+  .trustSection-container {
+    margin-top: 32px;
+  }
 }
 
 @media (max-width: 768px) {
   .hero-inner {
-    padding: 32px 20px;
+    padding: 28px 20px 0;
   }
 
   .hero-title {
@@ -218,17 +243,24 @@
     font-size: 12px;
     padding: 5px 12px;
   }
-
+.hero-text {
+    margin-top: -400px;  /* still needed here to keep the text from overlapping the image */
+  }
   .hero-cta {
     width: 100%;
     max-width: 250px;
     text-align: center;
   }
+
+  .study-form-container {
+    margin-top: 20px;
+    padding: 0 16px;
+  }
 }
 
 @media (max-width: 480px) {
-  .hero {
-    min-height: 460px;
+  .hero-bg {
+    max-height: 320px;
   }
 
   .hero-title {
@@ -237,5 +269,14 @@
 
   .hero-description {
     font-size: 14px;
+  }
+
+  .study-form-container {
+    margin-top: 16px;
+    padding: 0 12px 6px;
+  }
+
+  .trustSection-container {
+    margin-top: 24px;
   }
 }

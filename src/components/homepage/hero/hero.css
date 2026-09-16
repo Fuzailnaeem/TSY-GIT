@@ -9,11 +9,6 @@
     margin-top: 400px !important;
   }
 }
-@media (max-width: 1366px) { 
-.study-form-container{
-        margin-top: -100px !important;
-        padding: 6px;
-    } }
 .hero {
   position: relative;
   width: 100%;
